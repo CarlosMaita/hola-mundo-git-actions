@@ -1,0 +1,22 @@
+The contents of the file /my-laravel-app/my-laravel-app/database/seeders should include a seeder class to populate the database with initial data. Here is a basic example of a seeder class:
+
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+class DatabaseSeeder extends Seeder
+{
+    /**
+     * Seed the application's database.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        // Call other seeders here
+        // $this->call(UserSeeder::class);
+    }
+}

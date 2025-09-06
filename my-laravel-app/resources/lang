@@ -1,0 +1,9 @@
+The `/my-laravel-app/my-laravel-app/resources/lang` directory is typically used to store language files for localization in a Laravel application. Since you haven't specified a particular language file or content, I will create a default language file for English.
+
+Here are the contents for the file `/my-laravel-app/my-laravel-app/resources/lang/en/messages.php`:
+
+return [
+    'welcome' => 'Welcome to our application!',
+    'goodbye' => 'Thank you for visiting!',
+    'error' => 'An error occurred. Please try again later.',
+];
