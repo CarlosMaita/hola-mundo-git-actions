@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj Mundial</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Reloj Mundial</h1>
+        <div class="clock" id="clock"></div>
+        <div class="timezones">
+            <div class="timezone" id="timezone-utc">
+                <h2>UTC</h2>
+                <p class="time" id="time-utc"></p>
+            </div>
+            <div class="timezone" id="timezone-est">
+                <h2>EST</h2>
+                <p class="time" id="time-est"></p>
+            </div>
+            <div class="timezone" id="timezone-pst">
+                <h2>PST</h2>
+                <p class="time" id="time-pst"></p>
+            </div>
+            <div class="timezone" id="timezone-cet">
+                <h2>CET</h2>
+                <p class="time" id="time-cet"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function updateTime() {
+            const utc = new Date().toUTCString();
+            const est = new Date(new Date().toLocaleString("en-US", {timeZone: "America/New_York"})).toLocaleTimeString();
+            const pst = new Date(new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"})).toLocaleTimeString();
+            const cet = new Date(new Date().toLocaleString("en-US", {timeZone: "Europe/Berlin"})).toLocaleTimeString();
+
+            document.getElementById('time-utc').innerText = utc;
+            document.getElementById('time-est').innerText = est;
+            document.getElementById('time-pst').innerText = pst;
+            document.getElementById('time-cet').innerText = cet;
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+</html>
